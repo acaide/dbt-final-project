@@ -15,7 +15,7 @@ WITH s3_data AS (
     , $4 AS weekly_sales
     , $5 AS isholiday
   FROM 
-    {{ source("STAGING","SCD1_STORE")}}
+    {{ source("STAGING","SOURCE_DEPARTMENT")}}
 )
 
 -- apply SCD1 logic
@@ -28,7 +28,7 @@ updated_data AS (
         , s.isholiday
     FROM
         s3_data s
-    LEFT JOIN {{ ref('store') }} target
+    LEFT JOIN {{ ref('_department') }} target
         ON target.customer_id = s.customer_id
     WHERE
         target.store IS NULL  -- condition for new store

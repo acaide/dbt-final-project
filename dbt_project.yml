@@ -38,8 +38,13 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   wallmart_final_project:
     # Applies to all files under models/example/
-    src:
-      +materialized: table
+    staging:
+      store:
+        +materialized: table
+        schema: staging
+      department:
+        +materialized: table
+        schema: staging
     int:
       +materialized: view
     mart:
