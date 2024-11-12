@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: STAGING
+    database: WALLMART
+    schema: PUBLIC
+    tables: 
+      - name: SCD1_DEPARTMENT
+      - name: SCD1_STORE
+    
