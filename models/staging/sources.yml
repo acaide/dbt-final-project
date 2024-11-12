@@ -1,0 +1,18 @@
+version: 2
+
+sources:
+  - name: STAGING
+    database: WALLMART
+    schema: PUBLIC
+    tables: 
+      - name: STAGING_DEPARTMENT
+      - name: STAGING_STORE
+
+  - name: SOURCE
+    database: WALLMART
+    schema: PUBLIC
+    tables:
+      - name: DEPARTMENT
+      - name: STORE
+
+    
