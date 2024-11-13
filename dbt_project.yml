@@ -40,13 +40,9 @@ models:
     schema: public
     # Applies to all files under models/example/
     staging:
-      store:
-        +materialized: table
-        schema: staging
-      department:
-        +materialized: table
-        schema: staging
+      +materialized: view
+      schema: staging
     int:
       +materialized: view
     mart:
-      +marterialized: table
+      +materialized: table

@@ -8,7 +8,7 @@
 
 WITH updated_data AS (
     SELECT * 
-    FROM {{ ref('_department') }} s
+    FROM {{ ref('stg_wallmart__department') }} s
     LEFT JOIN {{ source('SOURCE','DEPARTMENT') }} target
         ON target.store_id = s.store_id
     WHERE

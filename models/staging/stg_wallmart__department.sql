@@ -1,3 +1,5 @@
+{{ config(materialized='table') }}
+
 WITH existing_data AS (
     SELECT
         MD5(CONCAT(store_id, dept_id)) AS location_id

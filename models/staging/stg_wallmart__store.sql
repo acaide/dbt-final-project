@@ -1,3 +1,5 @@
+{{ config(materialized='table') }}
+
 WITH existing_data AS (
     SELECT
         MD5(CONCAT(store_id, dept_id)) AS location_id
@@ -5,8 +7,7 @@ WITH existing_data AS (
         , dept_id
         , size
     FROM
-        {{ source("SOURCE","STORE") }}  
+        {{ source("STAGING","STAGING_STORE") }}  
 )
 
 SELECT * FROM existing_data
-WHERE store IS NOT NULL
