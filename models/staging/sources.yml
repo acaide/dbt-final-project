@@ -3,16 +3,16 @@ version: 2
 sources:
   - name: STAGING
     database: WALLMART
-    schema: PUBLIC
+    schema: BRONZE
     tables: 
-      - name: STAGING_DEPARTMENT
+      - name: STAGING_DATE
       - name: STAGING_STORE
 
-  - name: SOURCE
+  - name: EXISTING
     database: WALLMART
-    schema: PUBLIC
+    schema: BRONZE
     tables:
-      - name: DEPARTMENT
+      - name: DATE
       - name: STORE
 
     

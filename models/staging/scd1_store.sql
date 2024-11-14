@@ -9,7 +9,7 @@
 WITH updated_data AS (
     SELECT * 
     FROM {{ ref('stg_wallmart__store') }} s
-    LEFT JOIN {{ source('SOURCE','STORE') }} target
+    LEFT JOIN {{ source('EXISTING','STORE') }} target
         ON target.location_id = s.location_id
     WHERE
         target.location_id IS NULL  -- condition for new store
