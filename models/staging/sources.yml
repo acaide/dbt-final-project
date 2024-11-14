@@ -5,7 +5,7 @@ sources:
     database: WALLMART
     schema: BRONZE
     tables: 
-      - name: STAGING_DATE
+      - name: STAGING_DEPARTMENT
       - name: STAGING_STORE
 
   - name: EXISTING

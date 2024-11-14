@@ -6,7 +6,7 @@ WITH existing_data AS (
         , date
         , isholiday
     FROM
-        {{ source("STAGING","STAGING_DATE") }}
+        {{ source("STAGING","STAGING_DEPARTMENT") }}
 )
 
 SELECT * FROM existing_data
