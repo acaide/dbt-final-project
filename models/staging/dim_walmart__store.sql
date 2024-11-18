@@ -3,9 +3,10 @@
     unique_key=['store_id', 'dept_id']
 ) }}
 
+-- Adding 
 WITH new_data AS (
     SELECT *
-    FROM {{ ref('stg_wallmart__store') }}
+    FROM {{ ref('stg_walmart__store') }}
     LEFT JOIN (
         SELECT DISTINCT
         store_id

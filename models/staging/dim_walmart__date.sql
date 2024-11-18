@@ -1,7 +1,8 @@
 {{ 
     config(
         materialized='incremental',
-        unique_key='date_id') 
+        unique_key='date_id',
+        post_hook=add_primary_key(date_id)) 
 }}
 
 -- apply SCD1 logic
@@ -21,7 +22,7 @@ WITH changes AS (
             WHEN e.date != s.date OR e.isholiday != s.isholiday THEN CURRENT_TIMESTAMP
             ELSE e.update_date  -- Retain the existing update_date if there's no change
         END AS update_date
-    FROM {{ ref('stg_wallmart__date') }}  s
+    FROM {{ ref('stg_walmart__date') }}  s
     LEFT JOIN {{ source('EXISTING','DATE') }} e
         ON s.date_id = e.date_id
 )

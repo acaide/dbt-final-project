@@ -2,17 +2,19 @@ version: 2
 
 sources:
   - name: STAGING
-    database: WALLMART
+    database: WALMART
     schema: BRONZE
     tables: 
       - name: STAGING_DEPARTMENT
       - name: STAGING_STORE
+      - name: STAGING_FACT
 
   - name: EXISTING
-    database: WALLMART
+    database: WALMART
     schema: BRONZE
     tables:
       - name: DATE
       - name: STORE
+      - name: FACT
 
     
