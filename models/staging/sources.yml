@@ -15,6 +15,11 @@ sources:
     tables:
       - name: DATE
       - name: STORE
+
+  - name: SCD2
+    database: WALMART
+    schema: SILVER
+    tables:
       - name: FACT
 
     

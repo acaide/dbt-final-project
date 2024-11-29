@@ -37,12 +37,15 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   walmart_final_project:
+    database: walmart
     schema: public
-    # Applies to all files under models/example/
+    # Applies to all files under models/staging/
     staging:
       +materialized: view
       schema: bronze
     int:
       +materialized: view
+      schema: silver
     mart:
       +materialized: table
+      schema: gold
